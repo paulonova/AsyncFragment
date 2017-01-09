@@ -1,4 +1,4 @@
-#Mon Jan 09 16:25:03 CET 2017
+#Mon Jan 09 22:31:54 CET 2017
 base.0=D\:\\DESIGN_PATTERN_ANDROID\\CH3\\AsyncFragment\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_123fd7d03bd40ba2d62ed82072bce6e80afe1252
 renamed.1=classes2.dex
 renamed.0=classes.dex

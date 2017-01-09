@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements AsyncFragment.Par
 
         FragmentManager manager = getFragmentManager();
         mFragment = (AsyncFragment) manager.findFragmentByTag(FRAGMENT_TAG);
-        if(mFragment == null){
+        if (mFragment == null) {
             mFragment = new AsyncFragment();
             manager.beginTransaction().add(mFragment, FRAGMENT_TAG).commit();
         }
@@ -38,8 +38,7 @@ public class MainActivity extends AppCompatActivity implements AsyncFragment.Par
     }
 
     public void onRunBtnClick(View v) {
-        MyTask task = new MyTask();
-        task.execute("Chocolate", "Vanilla", "Strawberry");
+        mFragment.runAsyncTask("Chocolate", "Vanilla", "Strawberry");
     }
 
     public void onClearBtnClick(View v) {
@@ -57,24 +56,5 @@ public class MainActivity extends AppCompatActivity implements AsyncFragment.Par
         displayMessage(message);
     }
 
-    class MyTask extends AsyncTask<String, String, Void> {
 
-        @Override
-        protected Void doInBackground(String... params) {
-            for (String s : params) {
-                publishProgress("I got " + s);
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-            return null;
-        }
-
-        @Override
-        protected void onProgressUpdate(String... values) {
-            displayMessage(values[0]);
-        }
-    }
 }
